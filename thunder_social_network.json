@@ -1,0 +1,229 @@
+{
+  "info": {
+    "name": "Social Network API",
+    "_postman_id": "12345-abcdef-67890",
+    "description": "Collection for Social Network API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "GET All Users",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/users",
+          "host": ["{{base_url}}"],
+          "path": ["users"]
+        }
+      }
+    },
+    {
+      "name": "GET Single User",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/users/:userId",
+          "host": ["{{base_url}}"],
+          "path": ["users", ":userId"]
+        }
+      }
+    },
+    {
+      "name": "POST Create New User",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"username\": \"lernantino\",\n    \"email\": \"lernantino@gmail.com\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/users",
+          "host": ["{{base_url}}"],
+          "path": ["users"]
+        }
+      }
+    },
+    {
+      "name": "PUT Update User",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"username\": \"newUsername\",\n    \"email\": \"newemail@gmail.com\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/users/:userId",
+          "host": ["{{base_url}}"],
+          "path": ["users", ":userId"]
+        }
+      }
+    },
+    {
+      "name": "DELETE User",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/users/:userId",
+          "host": ["{{base_url}}"],
+          "path": ["users", ":userId"]
+        }
+      }
+    },
+    {
+      "name": "POST Add Friend",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/users/:userId/friends/:friendId",
+          "host": ["{{base_url}}"],
+          "path": ["users", ":userId", "friends", ":friendId"]
+        }
+      }
+    },
+    {
+      "name": "DELETE Remove Friend",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/users/:userId/friends/:friendId",
+          "host": ["{{base_url}}"],
+          "path": ["users", ":userId", "friends", ":friendId"]
+        }
+      }
+    },
+    {
+      "name": "GET All Thoughts",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/thoughts",
+          "host": ["{{base_url}}"],
+          "path": ["thoughts"]
+        }
+      }
+    },
+    {
+      "name": "GET Single Thought",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/thoughts/:thoughtId",
+          "host": ["{{base_url}}"],
+          "path": ["thoughts", ":thoughtId"]
+        }
+      }
+    },
+    {
+      "name": "POST Create Thought",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"thoughtText\": \"Here's a cool thought...\",\n    \"username\": \"lernantino\",\n    \"userId\": \"{userId}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/thoughts",
+          "host": ["{{base_url}}"],
+          "path": ["thoughts"]
+        }
+      }
+    },
+    {
+      "name": "PUT Update Thought",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"thoughtText\": \"Updated thought text\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/thoughts/:thoughtId",
+          "host": ["{{base_url}}"],
+          "path": ["thoughts", ":thoughtId"]
+        }
+      }
+    },
+    {
+      "name": "DELETE Thought",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/thoughts/:thoughtId",
+          "host": ["{{base_url}}"],
+          "path": ["thoughts", ":thoughtId"]
+        }
+      }
+    },
+    {
+      "name": "POST Create Reaction",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"reactionBody\": \"This is a reaction!\",\n    \"username\": \"lernantino\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/thoughts/:thoughtId/reactions",
+          "host": ["{{base_url}}"],
+          "path": ["thoughts", ":thoughtId", "reactions"]
+        }
+      }
+    },
+    {
+      "name": "DELETE Remove Reaction",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/thoughts/:thoughtId/reactions/:reactionId",
+          "host": ["{{base_url}}"],
+          "path": ["thoughts", ":thoughtId", "reactions", ":reactionId"]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:3001/api"
+    }
+  ]
+}
